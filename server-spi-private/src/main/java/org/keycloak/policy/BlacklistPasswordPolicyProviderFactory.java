@@ -181,13 +181,13 @@ public class BlacklistPasswordPolicyProviderFactory implements PasswordPolicyPro
      * to construct a {@link PasswordBlacklist}.
      * <p>
      * This implementation uses a dynamically sized {@link BloomFilter}
-     * to provide a false positive probability of 1%.
+     * to provide a false positive probability of 0.01%.
      *
      * @see BloomFilter
      */
     public static class FileBasedPasswordBlacklist implements PasswordBlacklist {
 
-        private static final double FALSE_POSITIVE_PROBABILITY = 0.01;
+        private static final double FALSE_POSITIVE_PROBABILITY = 0.0001;
 
         private static final int BUFFER_SIZE_IN_BYTES = 512 * 1024;
 
